@@ -54,7 +54,7 @@ def run_conversation(user_message):
     message=t1.get("candidates")[0].get("content").get("parts")
     if 'functionCall' in message[0]:
         resp1=parse_function_response(message)
-        return resp1
+        return resp1,text_to_speech_and_play(resp1)
     else:
         print("No function call")
 
